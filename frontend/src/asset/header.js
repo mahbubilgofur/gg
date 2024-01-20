@@ -10,7 +10,7 @@ function Header() {
 			<div className="fh5co-top-menu menu-1 text-center">
 				<ul>
 					<li><a href="work.html"><img src={Home} /></a></li>
-					<li><a href="about.html">login</a></li>
+					<li><a href="/login">login</a></li>
 					<li className="has-dropdown">
 						<a href="#">album</a>
 					</li>

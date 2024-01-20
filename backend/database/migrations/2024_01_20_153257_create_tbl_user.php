@@ -20,9 +20,11 @@ return new class extends Migration
             $table->string('email');
             $table->string('nama_lengkap');
             $table->text('alamat');
+            $table->string('level');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

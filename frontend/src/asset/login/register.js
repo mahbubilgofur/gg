@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../style.css';
+import '../login/style.css';
 import { useNavigate } from 'react-router-dom';
 
-const Tambah = () => {
+const Register = () => {
   const [userData, setUserData] = useState({
     username: '',
     password: '',
@@ -24,11 +24,11 @@ const Tambah = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:8000/api/users', userData)
+    axios.post('http://localhost:8000/api/login', userData)
       .then(response => {
         console.log('successfully: ', response.data);
         // Redirect back to user table after successful user creation
-        navigate('/user');  // Use navigate instead of history.push
+        navigate('/login');  // Use navigate instead of history.push
       })
       .catch(error => {
         console.error('Error creating user: ', error);
@@ -76,4 +76,4 @@ const Tambah = () => {
   );
 };
 
-export default Tambah;
+export default Register;

@@ -1,31 +1,27 @@
 <?php
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\LikeController;
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+use App\Http\Controllers\AuthhController;
 
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::apiResource('users', UserController::class);
+
+
+
+
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::apiResource('users', UserController::class);
 
 
 Route::get('/users', [UserController::class, 'index']);
@@ -70,3 +66,9 @@ Route::get('/likes/{id_like}', [LikeController::class, 'show']);
 Route::post('/likes', [LikeController::class, 'store']);
 Route::put('/likes/{id_like}', [LikeController::class, 'update']);
 Route::delete('/likes/{id_like}', [LikeController::class, 'destroy']);
+
+Route::post('/registers', [AuthhController::class, 'register']);
+Route::post('/login', [AuthhController::class, 'login']);
+// Route::post('/logout', [AuthhController::class, 'logout'])->middleware('auth');
+// Secara opsional, gunakan middleware auth pada rute logout
+Route::post('/logout', [AuthhController::class, 'logout'])->middleware('auth');

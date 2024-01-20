@@ -22,7 +22,9 @@ import Like from './admin/like/like';
 import Like_add from './admin/like/tambah';
 import Like_edit from './admin/like/edit';
 // 
-
+import Login from './asset/login/login';
+import Register from './asset/login/register';
+import Logout from './asset/login/logout';
 
 
 
@@ -30,6 +32,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        {/* halamanuntuk login dan regsiter */}
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/logout" element={<Logout />} />
         {/* halamanadmin */}
         <Route path="/user" element={<User/>} />
         <Route path="/tambah_user" element={<User_add />} />

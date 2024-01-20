@@ -1,5 +1,5 @@
 import '../style.css';
-
+import Logout from '../../asset/login/logout';
 
 function Nav(){
     return(
@@ -12,6 +12,7 @@ function Nav(){
             <li><a href="/komentar">Komentar</a></li>
             <li><a href="/like">Like Foto</a></li>
             <li><a href="/user">User</a></li>
+            <li><Logout/></li>
         </ul>
 </div>
     )
